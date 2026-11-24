@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>いちにちひとこと</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+
+    <header>
+        <h1>いちにちひとこと</h1>
+        <p>今日という一日を、一言に。</p>
+    </header>
+
+    <main>
+        <section class="post-section">
+            <h2>一日の終わりに「ひとこと」を残そう</h2>
+
+            <form action="/posts" method="POST">
+                <label for="date">日付</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="message">今日の一言</label>
+                <input type="text" id="message" name="message" placeholder="今日はどんな一日だった？" maxlength="50" required>
+
+                <button type="submit">記録する</button>
+            </form>
+        </section>
+
+        <section class="history-section">
+            <h2>これまでの一言</h2>
+            <p>まだ記録はありません。</p>
+        </section>
+    </main>
+    <footer>
+        <h4>一日一言 - 小さな思い出を残そう</h4>
+    </footer>
+
+
+</body>
+
+</html>

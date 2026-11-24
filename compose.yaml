@@ -1,0 +1,27 @@
+
+services:
+  app:
+    build: .
+    tty: true
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    env_file:
+      - .env  
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: oneword_user
+      POSTGRES_PASSWORD: oneword_password
+      POSTGRES_DB: oneword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  node_modules:
+  postgres_data:
